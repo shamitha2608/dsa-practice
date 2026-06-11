@@ -1,0 +1,18 @@
+class Solution(object):
+    def containsPattern(self, arr, m, k):
+        n = len(arr)
+        
+        # Iterate over all possible starting points
+        for i in range(n - m * k + 1):
+            found = True
+            
+            # Check if the pattern repeats k times
+            for j in range(m * (k - 1)):
+                if arr[i + j] != arr[i + j + m]:
+                    found = False
+                    break
+            
+            if found:
+                return True
+        
+        return False
