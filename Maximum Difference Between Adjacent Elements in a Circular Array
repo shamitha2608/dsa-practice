@@ -1,0 +1,11 @@
+class Solution(object):
+    def maxAdjacentDistance(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        d = 0
+        for i in range(len(nums)):
+            if d < abs(nums[i]-nums[(i+1)%len(nums)]):
+                d = abs(nums[i]-nums[(i+1)%len(nums)])
+        return d
