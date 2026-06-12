@@ -1,0 +1,14 @@
+class Solution(object):
+    def minimumRightShifts(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        n= len(nums)
+        a = sorted(nums)
+        if nums == a:
+            return 0
+        for i in range(n):
+            if nums[i:]+nums[:i]==a:
+                return n-i
+        return -1
